@@ -1,0 +1,15 @@
+<head>
+<link rel="stylesheet" type="text/css" href="../../vendor/style.css">
+</head>
+
+<div>
+	{{visualization/page-setup/visualization-navbar
+    content=(array 
+      (component "visualization/page-setup/navbar/reset-visualization") 
+      (component "visualization/page-setup/navbar/file-downloader"
+        urlPath=exportLandscapeUrl fileName=exportLandscapeFileName) 
+      (component "visualization/page-setup/navbar/file-uploader"
+        backendURL=uploadLandscapeUrl) 
+      )
+    }}
+</div>
