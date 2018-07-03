@@ -33,9 +33,9 @@ Contributing
 
 ### Running tests
 
-* `ember test` â€“ Runs the test suite on the current Ember version
-* `ember test --server` â€“ Runs the test suite in "watch mode"
-* `ember try:each` â€“ Runs the test suite against multiple Ember versions
+* `ember test` – Runs the test suite on the current Ember version
+* `ember test --server` – Runs the test suite in "watch mode"
+* `ember try:each` – Runs the test suite against multiple Ember versions
 
 ### Running the dummy application
 
