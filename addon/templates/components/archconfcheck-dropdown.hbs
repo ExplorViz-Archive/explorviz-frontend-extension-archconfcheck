@@ -1,0 +1,8 @@
+<div class="accdropdown">
+  <select class="form-control" id="sel2" onchange={{action 'select' value="target.value"}}>
+  	<option disabled selected value> -- select a modellandscape -- </option>
+  	{{#each replayModels as |replayModel|}}
+  		<option>{{replayModel}}</option> 
+  	{{/each}}
+   </select>
+</div>

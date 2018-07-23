@@ -3,13 +3,23 @@
 </head>
 
 <div>
-	{{visualization/page-setup/visualization-navbar
+{{#if showLandscape}}
+  {{visualization/page-setup/visualization-navbar
     content=(array 
       (component "visualization/page-setup/navbar/reset-visualization") 
-      (component "visualization/page-setup/navbar/file-downloader"
-        urlPath=exportLandscapeUrl fileName=exportLandscapeFileName) 
-      (component "visualization/page-setup/navbar/file-uploader"
-        backendURL=uploadLandscapeUrl) 
-      )
-    }}
+      (component "model-dropdown" replayModels=fillDropdownUrl) 
+    )
+  }}
+  {{visualization/rendering/landscape-rendering latestLandscape=archConfCheckRepo.archConfCheckLandscape interaction=landscapeInteraction}}
+{{else}}
+  {{visualization/page-setup/visualization-navbar
+    content=(array 
+      (component "navbar-resetview") 
+      (component "visualization/page-setup/navbar/reset-visualization") 
+      (component "visualization/page-setup/navbar/application-opener") 
+      (component "visualization/page-setup/navbar/application-search")
+    )
+  }}
+  {{visualization/rendering/application-rendering latestApplication=archConfCheckRepo.archConfCheckApplication interaction=applicationInteraction}}
+{{/if}}
 </div>
