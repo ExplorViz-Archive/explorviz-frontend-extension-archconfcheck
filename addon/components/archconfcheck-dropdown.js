@@ -1,7 +1,12 @@
 import Component from '@ember/component';
 import layout from '../templates/components/archconfcheck-dropdown';
+import Service from '@ember/service';
+import ENV from 'explorviz-frontend/config/environment';
+import FileSaverMixin from 'ember-cli-file-saver/mixins/file-saver';
+import { inject as service } from "@ember/service";
+import AlertifyHandler from 'explorviz-frontend/mixins/alertify-handler';
 
-export default Component.extend({
+export default Component.extend({ 
   layout,
 
 
@@ -23,7 +28,7 @@ export default Component.extend({
 	},
 	getListFromBackend(){
 		const { access_token } = this.get('session.data.authenticated');
-
+		
 		const self = this;
 
 		const url = `${ENV.APP.API_ROOT}${'/landscape/fill-dropdown'}`
@@ -52,7 +57,7 @@ export default Component.extend({
 		
 		this.debug("start landscape-request");
 		//TODO "0-0" has to be replaced by the moniored Landscape timestamp and activity load
-		this.get("store").queryRecord('landscape', 'comparedModel/' + "0-0" + "+" + nameOfModel)
+		this.get("store").queryRecord('landscape', 'comparedModel/' + "0-0" + "_" + nameOfModel)
 			.then(success, failure).catch(error);
 
 		//--------------inner functions--------------
