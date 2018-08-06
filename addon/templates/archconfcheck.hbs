@@ -1,8 +1,3 @@
-<head>
-<link rel="stylesheet" type="text/css" href="../../vendor/style.css">
-</head>
-
-<div>
 {{#if showLandscape}}
   {{visualization/page-setup/visualization-navbar
     content=(array 
@@ -10,7 +5,7 @@
       (component "archconfcheck-dropdown" replayModels=fillDropdownUrl) 
     )
   }}
-  {{visualization/rendering/landscape-rendering latestLandscape=archConfCheckRepo.archConfCheckLandscape interaction=landscapeInteraction}}
+  {{visualization/rendering/landscape-rendering latestLandscape=archConfCheckRepo.archConfCheckLandscape interaction=landscapeInteraction configuration=color-configuration}}
 {{else}}
   {{visualization/page-setup/visualization-navbar
     content=(array 
@@ -22,4 +17,3 @@
   }}
   {{visualization/rendering/application-rendering latestApplication=archConfCheckRepo.archConfCheckApplication interaction=applicationInteraction}}
 {{/if}}
-</div>

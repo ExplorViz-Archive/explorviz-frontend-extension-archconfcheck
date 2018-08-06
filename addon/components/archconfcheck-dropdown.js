@@ -11,7 +11,7 @@ export default Component.extend({
 
 
 	replayModels: null,
-	modellRepo: service('modell-repository'),
+	archConfCheckRepo: service('archconfcheck-repository'),
 	store: service(),
 
 	session: service(),
@@ -62,6 +62,7 @@ export default Component.extend({
 
 		//--------------inner functions--------------
 		function success(landscape){
+			console.log(landscape);
 			self.set('archConfCheckRepo.archConfCheckLandscape', null);
 			self.debug("end landscape-request");
 			self.set('archConfCheckRepo.archConfCheckLandscape', landscape);
