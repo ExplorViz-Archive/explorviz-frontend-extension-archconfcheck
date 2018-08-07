@@ -24,7 +24,7 @@ export default Component.extend({
 
 	didRender(){
 		this._super(...arguments);
-		this.getListFromBackend();
+		//this.getListFromBackend();
 	},
 	getListFromBackend(){
 		const { access_token } = this.get('session.data.authenticated');

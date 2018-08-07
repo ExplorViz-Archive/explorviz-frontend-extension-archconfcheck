@@ -5,7 +5,7 @@
       (component "archconfcheck-dropdown" replayModels=fillDropdownUrl) 
     )
   }}
-  {{visualization/rendering/landscape-rendering latestLandscape=archConfCheckRepo.archConfCheckLandscape interaction=landscapeInteraction configuration=color-configuration}}
+  {{archconfcheck-landscape-visualization latestLandscape=archConfCheckRepo.archConfCheckLandscape interaction=landscapeInteraction}}
 {{else}}
   {{visualization/page-setup/visualization-navbar
     content=(array 
