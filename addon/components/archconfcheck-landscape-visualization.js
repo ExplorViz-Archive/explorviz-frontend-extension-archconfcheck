@@ -71,6 +71,35 @@ export default LandscapeRendering.extend({
 	},
 	createLine(tile, tiles, parent, centerPoint) {
 
+		let materialPlane = null;
+      
+		switch(tile.drawStatus){
+		case "ASMODELLED":
+			tile.positionZ = 0.002;
+			materialPlane = new THREE.MeshBasicMaterial({
+				color: this.get('configurationService.asModelledLandscapeColors.communication')
+			});
+			break;
+		case "GHOST":
+			tile.positionZ = 0.0026;
+			materialPlane = new THREE.MeshBasicMaterial({
+				color: this.get('configurationService.ghostLandscapeColors.communication')
+			});
+			break;
+		case "WARNING":
+			tile.positionZ = 0.003;
+			materialPlane = new THREE.MeshBasicMaterial({
+				color: this.get('configurationService.warningLandscapeColors.communication')
+			});
+			break;
+		default:
+			tile.positionZ = 0.0019;
+			materialPlane = new THREE.MeshBasicMaterial({
+				color: "rgb(0,5,0)"
+			});
+			break;
+		}
+
       let firstVector = new THREE.Vector3(tile.startPoint.x - centerPoint.x,
         tile.startPoint.y - centerPoint.y, tile.positionZ);
       let secondVector = new THREE.Vector3(tile.endPoint.x - centerPoint.x,
@@ -85,32 +114,6 @@ export default LandscapeRendering.extend({
 
       const geometryPlane = new THREE.PlaneGeometry(lengthPlane,
         tile.lineThickness * 0.4);
-
-      let materialPlane = null;
-
-      console.log("tile:");
-      switch(tile.communications[0].firstObject.get('extensionAttributes.status')){
-      case "ASMODELLED":
-			materialPlane = new THREE.MeshBasicMaterial({
-				color: this.get('configurationService.asModelledLandscapeColors.communication')
-			});
-			break;
-		case "GHOST":
-			materialPlane = new THREE.MeshBasicMaterial({
-				color: this.get('configurationService.ghostLandscapeColors.communication')
-			});
-			break;
-		case "WARNING":
-			materialPlane = new THREE.MeshBasicMaterial({
-				color: this.get('configurationService.warningLandscapeColors.communication')
-			});
-			break;
-		default:
-			materialPlane = new THREE.MeshBasicMaterial({
-				color: "rgb(244,145,0)"
-			});
-			break;
-		}
 
       const plane = new THREE.Mesh(geometryPlane, materialPlane);
 

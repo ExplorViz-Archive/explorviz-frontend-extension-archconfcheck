@@ -62,7 +62,6 @@ export default Component.extend({
 
 		//--------------inner functions--------------
 		function success(landscape){
-			console.log(landscape);
 			self.set('archConfCheckRepo.archConfCheckLandscape', null);
 			self.debug("end landscape-request");
 			self.set('archConfCheckRepo.archConfCheckLandscape', landscape);

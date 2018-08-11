@@ -1,0 +1,1 @@
+export { default } from 'explorviz-frontend-extension-archconfcheck/components/navbar-resetview-arch-conf-check';

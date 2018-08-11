@@ -73,7 +73,7 @@ export default Controller.extend({
 				if(emberModelName === "application"){
 					// data available => open application-rendering
 					this.closeAlertifyMessages();
-					self.set('modellRepo.modellApplication', emberModel);
+					self.set('archConfCheckRepo.archConfCheckApplication', emberModel);
 				}
 				else if (emberModelName === "nodegroup" || emberModelName === "system"){
 					emberModel.setOpened(!emberModel.get('opened'));
