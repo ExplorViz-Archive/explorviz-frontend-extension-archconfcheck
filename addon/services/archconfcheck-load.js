@@ -11,7 +11,7 @@ import Service from '@ember/service';
 export default Service.extend(AlertifyHandler, {
 
 store: service('store'),
-archConfCheckRepo: service('archconfcheck-repository'),
+
 
 
   receiveMergedLandscape(timestamps){

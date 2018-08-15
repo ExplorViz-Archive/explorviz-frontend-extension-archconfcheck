@@ -13,6 +13,10 @@ export default LandscapeRepo.extend({
   archConfCheckApplication: null,
 
   triggerUpdate(){
+  	console.log("wir triggern ein update auf dem archconfcheckRepo");
+  	console.log(this.get('archConfCheckLandscape'));
+  	console.log("app:");
+  	console.log(this.get('archConfCheckApplication'));
     this.trigger("updated", this.get("archConfCheckLandscape"));
   }
 

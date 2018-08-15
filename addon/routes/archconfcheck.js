@@ -12,7 +12,10 @@ export default BaseRoute.extend(AlertifyHandler, {
     // @Override BaseRoute
     resetRoute() {
       // your cleanup code here
-    }
+    },
+    switchLandscape(){
+		this.set('archConfCheckRepo.archConfCheckApplication', null);
+	}
   }
 
 });

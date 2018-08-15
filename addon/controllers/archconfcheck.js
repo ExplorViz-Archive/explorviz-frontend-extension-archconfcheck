@@ -23,8 +23,9 @@ export default Controller.extend({
   renderingService: service("rendering-service"),
   archConfCheckRepo: service('archconfcheck-repository'),
   highlighter: service('visualization/application/highlighter'),
-  //landscapeRepo: service('repos/landscape-repository'),
   store: service(),
+
+  replayModels: null,
 
   state: null,
 
@@ -42,6 +43,10 @@ export default Controller.extend({
   condition: null,
 
   showLandscape: computed('archConfCheckRepo.archConfCheckApplication', function() {
+  	console.log(!this.get('archConfCheckRepo.archConfCheckApplication'));
+  	console.log("landscape:");
+  	console.log(this.get('archConfCheckRepo.archConfCheckLandscape'));
+
 	return !this.get('archConfCheckRepo.archConfCheckApplication');
   }),
 

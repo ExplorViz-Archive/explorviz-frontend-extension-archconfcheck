@@ -28,7 +28,7 @@ export default ConfigService.extend({
   * @type Object
   */
   asModelledApplicationColors: {
-	foundation: "rgb(199,199,199)",
+	foundation: "rgb(206,206,206)",
 	componentOdd: "rgb(0,187,65)",
 	componentEven: "rgb(22,158,43)",
 	clazz: "rgb(62,20,160)",
@@ -42,9 +42,10 @@ export default ConfigService.extend({
   * @type Object
   */
   ghostApplicationColors: {
-    foundation: "rgb(199,199,199)",
-    componentOdd: "rgb(2, 0, 254)",
-    componentEven: "rgb(0,120,250)",
+    foundation: "rgb(150,150,239)",
+    componentOdd: "rgb(0,189,255)",
+    componentEven: "rgb(1,155,232)",
+    clazz: "rgb(0,0,255)",
     communication: "rgb(0, 0, 250)",
     highlightedEntity: "rgb(0,0,255)",
   },
@@ -56,11 +57,11 @@ export default ConfigService.extend({
   * @type Object
   */
   warningApplicationColors: {
-    foundation: "rgb(199,199,199)",
-    componentOdd: "rgb(255,0,0)",
-    componentEven: "rgb(255,0,120)",
-    clazz: "rgb(255, 0, 0)",
-    communication: "rgb(244,70,0)",
+    foundation: "rgb(239,150,150)",
+    componentOdd: "rgb(214, 29, 29)",
+    componentEven: "rgb(179, 0, 0)",
+    clazz: "rgb(112, 0, 0)",
+    communication: "rgb(255,0,0)",
     highlightedEntity: "rgb(255,255,0)",
   },
 
@@ -81,7 +82,7 @@ export default ConfigService.extend({
 	system: "rgb(150,150,239)",
 	nodegroup: "rgb(1,155,232)",
 	node: "rgb(0,189,255)",
-	application: "rgb(40,15,223)",
+	application: "rgb(0,0,255)",
 	communication: "rgb(30,240,255)",
 	textsystem: "rgb(0,0,0)",
 	textnode: "rgb(255,255,255)",
@@ -92,9 +93,9 @@ export default ConfigService.extend({
 
   warningLandscapeColors: {
   	system: "rgb(239,150,150)",
-	nodegroup: "rgb(221,80,15)",
-	node: "rgb(150,60,20)",
-	application: "rgb(240,15,70)",
+	nodegroup: "rgb(179, 0, 0)",
+	node: "rgb(214, 29, 29)",
+	application: "rgb(112, 0, 0)",
 	communication: "rgb(255,0,0)",
 	textsystem: "rgb(0,0,0)",
 	textnode: "rgb(255,255,255)",

@@ -7,12 +7,11 @@ import THREE from "three";
 import applyKlayLayout from
  'explorviz-frontend/utils/landscape-rendering/klay-layouter';
 
-export default LandscapeRendering.extend({
+export default LandscapeRendering.extend({ 
   layout,
 
 	renderingService: service("rendering-service"),
 	configurationService: service("color-configuration"),
-	ArchConfCheckRepo : service("archconfcheck-repository"),
 
 
 	hammerManager: null,
