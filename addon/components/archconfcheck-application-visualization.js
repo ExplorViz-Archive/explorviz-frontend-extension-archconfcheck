@@ -13,7 +13,7 @@ export default ApplicationRendering.extend({
   renderingService: service("rendering-service"),
   configurationService: service("color-configuration"),
   coreConfiguration: service("configuration"),
-  ArchConfCheckRepo : service("archconfcheck-repository"),
+  archConfCheckRepo : service("archconfcheck-repository"),
 
   // @Override
   cleanup() {
