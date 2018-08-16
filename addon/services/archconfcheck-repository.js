@@ -8,16 +8,12 @@ import LandscapeRepo from 'explorviz-frontend/services/repos/landscape-repositor
 */
 export default LandscapeRepo.extend({
 
-  archConfCheckLandscape: null,
+	archConfCheckLandscape: null,
 
-  archConfCheckApplication: null,
+	archConfCheckApplication: null,
 
-  triggerUpdate(){
-  	console.log("wir triggern ein update auf dem archconfcheckRepo");
-  	console.log(this.get('archConfCheckLandscape'));
-  	console.log("app:");
-  	console.log(this.get('archConfCheckApplication'));
-    this.trigger("updated", this.get("archConfCheckLandscape"));
-  }
+	triggerUpdate(){
+	this.trigger("updated", this.get("archConfCheckLandscape"));
+	}
 
 });

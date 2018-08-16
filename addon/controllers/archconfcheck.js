@@ -4,7 +4,6 @@ import { computed } from '@ember/object';
 import { getOwner } from '@ember/application';
 import LandscapeInteraction from 'explorviz-frontend/utils/landscape-rendering/interaction';
 import ApplicationInteraction from 'explorviz-frontend/utils/application-rendering/interaction';
-import ENV from 'explorviz-frontend/config/environment';
 
 /**
 * TODO
@@ -17,38 +16,34 @@ import ENV from 'explorviz-frontend/config/environment';
 */
 export default Controller.extend({
 
-  urlBuilder: service("url-builder"),
-  viewImporter: service("view-importer"),
-  reloadHandler: service("reload-handler"),
-  renderingService: service("rendering-service"),
-  archConfCheckRepo: service('archconfcheck-repository'),
-  highlighter: service('visualization/application/highlighter'),
-  store: service(),
+	urlBuilder: service("url-builder"),
+	viewImporter: service("view-importer"),
+	reloadHandler: service("reload-handler"),
+	renderingService: service("rendering-service"),
+	archConfCheckRepo: service('archconfcheck-repository'),
+	highlighter: service('visualization/application/highlighter'),
+	store: service(),
 
-  replayModels: null,
+	replayModels: null,
 
-  state: null,
+	state: null,
 
-  // Specify query parameters
-  queryParams: ['timestamp', 'appID', 'camX', 'camY', 'camZ', 'condition'],
+	// Specify query parameters
+	queryParams: ['timestamp', 'appID', 'camX', 'camY', 'camZ', 'condition'],
 
-  type: 'landscape',
+	type: 'landscape',
 
-  // query parameter serialized into strings
-  timestamp: null,
-  appID: null,
-  camX: null,
-  camY: null,
-  camZ: null,
-  condition: null,
+	// query parameter serialized into strings
+	timestamp: null,
+	appID: null,
+	camX: null,
+	camY: null,
+	camZ: null,
+	condition: null,
 
-  showLandscape: computed('archConfCheckRepo.archConfCheckApplication', function() {
-  	console.log(!this.get('archConfCheckRepo.archConfCheckApplication'));
-  	console.log("landscape:");
-  	console.log(this.get('archConfCheckRepo.archConfCheckLandscape'));
-
-	return !this.get('archConfCheckRepo.archConfCheckApplication');
-  }),
+	showLandscape: computed('archConfCheckRepo.archConfCheckApplication', function() {
+		return !this.get('archConfCheckRepo.archConfCheckApplication');
+	}),
 
 	initMyListeners() {
 		const landscapeInteraction = LandscapeInteraction.create(getOwner(this).ownerInjection());

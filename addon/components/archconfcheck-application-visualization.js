@@ -2,11 +2,6 @@ import layout from '../templates/components/archconfcheck-application-visualizat
 import ApplicationRendering from 'explorviz-frontend/components/visualization/rendering/application-rendering';
 import {inject as service} from '@ember/service';
 
-import THREE from "three";
-
-import applyKlayLayout from
- 'explorviz-frontend/utils/landscape-rendering/klay-layouter';
-
 export default ApplicationRendering.extend({
   layout,
   reloadHandler: service("reload-handler"),
@@ -38,24 +33,20 @@ export default ApplicationRendering.extend({
   //coloring of components and classes
   addComponentToScene(component, color) {
 
-  	let asModelledFoundation = this.get('configurationService').get('asModelledApplicationColors.foundation');
-  	let asModelledComponentOdd = this.get('configurationService').get('asModelledApplicationColors.componentOdd');
-  	let asModelledComponentEven = this.get('configurationService').get('asModelledApplicationColors.componentEven');
-  	let asModelledClazz = this.get('configurationService').get('asModelledApplicationColors.clazz');
-  	
-  	let warningFoundation = this.get('configurationService').get('warningApplicationColors.foundation');
-  	let warningComponentOdd = this.get('configurationService').get('warningApplicationColors.componentOdd');
-  	let warningComponentEven = this.get('configurationService').get('warningApplicationColors.componentEven');
-  	let warningClazz = this.get('configurationService').get('warningApplicationColors.clazz');
+    let asModelledFoundation = this.get('configurationService').get('asModelledApplicationColors.foundation');
+    let asModelledComponentOdd = this.get('configurationService').get('asModelledApplicationColors.componentOdd');
+    let asModelledComponentEven = this.get('configurationService').get('asModelledApplicationColors.componentEven');
+    let asModelledClazz = this.get('configurationService').get('asModelledApplicationColors.clazz');
 
-  	let ghostFoundation = this.get('configurationService').get('ghostApplicationColors.foundation');
-  	let ghostComponentOdd = this.get('configurationService').get('ghostApplicationColors.componentOdd');
-  	let ghostComponentEven = this.get('configurationService').get('ghostApplicationColors.componentEven');
-  	let ghostClazz = this.get('configurationService').get('ghostApplicationColors.clazz');
-  	
-    console.log("name des Comp: ");
-    console.log(component.get("name"));
-    console.log("    " + component.get('extensionAttributes.status'));
+    let warningFoundation = this.get('configurationService').get('warningApplicationColors.foundation');
+    let warningComponentOdd = this.get('configurationService').get('warningApplicationColors.componentOdd');
+    let warningComponentEven = this.get('configurationService').get('warningApplicationColors.componentEven');
+    let warningClazz = this.get('configurationService').get('warningApplicationColors.clazz');
+
+    let ghostFoundation = this.get('configurationService').get('ghostApplicationColors.foundation');
+    let ghostComponentOdd = this.get('configurationService').get('ghostApplicationColors.componentOdd');
+    let ghostComponentEven = this.get('configurationService').get('ghostApplicationColors.componentEven');
+    let ghostClazz = this.get('configurationService').get('ghostApplicationColors.clazz');
 
     //this is true when a foundation is wanted!
     if(color === 0xCECECE){
@@ -67,7 +58,6 @@ export default ApplicationRendering.extend({
         color = warningFoundation;
         break;
         case("GHOST"):
-        console.log("ich male jetzt eine ghost foundation!");
         color = ghostFoundation;
         break;
         default:
@@ -86,23 +76,23 @@ export default ApplicationRendering.extend({
       if (component.get('opened')) {
         switch(clazz.get('extensionAttributes.status')){
         case("WARNING"):
-        	this.createBox(clazz, warningClazz , true);
-        	break;
+          this.createBox(clazz, warningClazz , true);
+          break;
         case("GHOST"):
-        	this.createBox(clazz, ghostClazz , true);
-        	break;
+          this.createBox(clazz, ghostClazz , true);
+          break;
         case("ASMODELLED"):
-        	this.createBox(clazz, asModelledClazz , true);
-        	break;
+          this.createBox(clazz, asModelledClazz , true);
+          break;
         default:
-        	this.createBox(clazz, "rgb(206,206,206)" , true);
-        	break;
+          this.createBox(clazz, "rgb(206,206,206)" , true);
+          break;
         }
       }
     });
 
     children.forEach((child) => {
-		if (component.get('opened')) {
+    if (component.get('opened')) {
 			switch(child.get('extensionAttributes.status')){
 			case("WARNING"):
 				if(component.get('color') === warningComponentEven || component.get('color') === warningFoundation || component.get('color') === asModelledFoundation || component.get('color') === ghostFoundation){

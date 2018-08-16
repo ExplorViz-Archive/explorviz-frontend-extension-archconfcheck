@@ -1,10 +1,7 @@
 import Component from '@ember/component';
 import layout from '../templates/components/archconfcheck-dropdown';
-import Service from '@ember/service';
 import ENV from 'explorviz-frontend/config/environment';
-import FileSaverMixin from 'ember-cli-file-saver/mixins/file-saver';
 import { inject as service } from "@ember/service";
-import AlertifyHandler from 'explorviz-frontend/mixins/alertify-handler';
 
 export default Component.extend({ 
   layout,

@@ -14,7 +14,6 @@ export default Component.extend({
 	
 	actions:{
 		resetApplication(){
-			console.log("das hier wird auch aufgerufen wie es geplant war von anfang an");
 			this.set('archConfCheckRepo.archConfCheckApplication', null);
 			this.get('renderingService').reSetupScene();
 		}

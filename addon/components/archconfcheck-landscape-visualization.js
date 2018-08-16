@@ -4,9 +4,6 @@ import {inject as service} from '@ember/service';
 
 import THREE from "three";
 
-import applyKlayLayout from
- 'explorviz-frontend/utils/landscape-rendering/klay-layouter';
-
 export default LandscapeRendering.extend({ 
   layout,
 
@@ -25,7 +22,7 @@ export default LandscapeRendering.extend({
 	closeSymbol: null,
 
 	//here the colors of the planes are set.
- 	createPlane(model) {
+	createPlane(model) {
 
 		const emberModelName = model.constructor.modelName;
 		const asmodelled = "ASMODELLED";

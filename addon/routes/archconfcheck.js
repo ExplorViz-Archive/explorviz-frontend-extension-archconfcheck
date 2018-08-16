@@ -8,11 +8,11 @@ export default BaseRoute.extend(AlertifyHandler, {
 	store: service(),
 	renderingService: service("rendering-service"),
 
-  actions: {
-    // @Override BaseRoute
-    resetRoute() {
-      	this.set('archConfCheckRepo.archConfCheckApplication', null);
-    }
-  }
+	actions: {
+	// @Override BaseRoute
+	resetRoute() {
+		this.set('archConfCheckRepo.archConfCheckApplication', null);
+	}
+	}
 
 });
