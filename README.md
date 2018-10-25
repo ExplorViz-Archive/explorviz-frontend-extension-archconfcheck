@@ -1,24 +1,8 @@
-explorviz-frontend-extension-archconfcheck
-==============================================================================
+# explorviz-frontend-extension-archconfcheck
 
-[Short description of the addon.]
+This frontend extension adds an architecture conformance check mode to ExplorViz (Work-In-Progress) 
 
-Installation
-------------------------------------------------------------------------------
-
-```
-ember install explorviz-frontend-extension-archconfcheck
-```
-
-
-Usage
-------------------------------------------------------------------------------
-
-[Longer description of how to use the addon in apps.]
-
-
-Contributing
-------------------------------------------------------------------------------
+## Contributing
 
 ### Installation
 
@@ -33,9 +17,9 @@ Contributing
 
 ### Running tests
 
-* `ember test` – Runs the test suite on the current Ember version
-* `ember test --server` – Runs the test suite in "watch mode"
-* `ember try:each` – Runs the test suite against multiple Ember versions
+* `ember test` â€“ Runs the test suite on the current Ember version
+* `ember test --server` â€“ Runs the test suite in "watch mode"
+* `ember try:each` â€“ Runs the test suite against multiple Ember versions
 
 ### Running the dummy application
 
@@ -43,8 +27,3 @@ Contributing
 * Visit the dummy application at [http://localhost:4200](http://localhost:4200).
 
 For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
-
-License
-------------------------------------------------------------------------------
-
-This project is licensed under the [MIT License](LICENSE.md).
