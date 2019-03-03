@@ -1,5 +1,7 @@
 # explorviz-frontend-extension-archconfcheck
 
+## Project Description
+
 This frontend extension adds an architecture conformance check mode to ExplorViz (Work-In-Progress) 
 
 ## Contributing
