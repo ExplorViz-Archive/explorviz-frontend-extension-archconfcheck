@@ -1,7 +1,7 @@
 {
       "imgSrc": "conf-check.svg",
       "requiredExtensions": [
-        "frontend"
+        "frontend_master"
       ],
       "incompatibleExtensions": []
 }
